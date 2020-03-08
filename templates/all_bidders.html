@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="jumbotron">
+    {% for t in tenders %}
+    <form method="POST" action="{{ url_for('view_bidding') }}"
+        <h3>{{t.tender}}</h3>
+        <input type='text' placeholder='amount' name='amount'>
+        <input type='submit' placeholder='submit'>
+    {% endfor %}
+</div>
+
+{% endblock content %}

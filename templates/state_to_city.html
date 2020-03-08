@@ -1,0 +1,21 @@
+{% extends "layout2.html" %} {% block content %}
+<style>
+.main{
+    margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px; 
+}
+</style>
+   <div class="main">
+    <form action="http://5bb1b084.ngrok.io/post_route_city" method="POST">
+        <label for="from_state">Enter (from) state:</label><br>
+        <input type="text" id="from_state" name="from_state"><br>
+        <label for="to_city">Enter (to) city:</label><br>
+        <input type="text" id="to_city" name="to_city"><br>
+        <label for="amount">Enter Amount:</label><br>
+        <input type="text" id="amount" name="amount"><br><br>
+        <input type="submit" style="color: aqua; background-color: black;" value="Submit">
+    </form>
+    </div>
+{% endblock %}

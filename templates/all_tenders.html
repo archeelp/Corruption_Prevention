@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="jumbotron">
+      <h4>The Tenders are:<h4>
+    
+    {% for t in tenders %}
+    <ul>
+        <li>{{t.tender}}</li>
+    </ul>
+    {% endfor %}
+</div>
+
+{% endblock content %}

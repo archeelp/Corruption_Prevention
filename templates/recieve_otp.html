@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block content %}
+<style>
+    .main {
+        margin: 50px auto;
+        float: none;
+        margin-bottom: 10px;
+    }
+</style>
+<div class="main">
+    <div>
+        <form action="{{ url_for('recieve_otp') }}" method="post" enctype="multipart/form-data">
+            <div class="container">
+                <label for="otp code"><b>otp code</b></label>
+                <input type="text" placeholder="Enter otp" name="code" required>
+
+                <button type="submit">submit</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends "layout.html" %} {% block content %}
+
+<br>
+<br>
+<br>
+
+<style>
+    .main {
+        margin: 50px auto;
+        float: none;
+        margin-bottom: 10px;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    /* Add padding to containers */
+    
+    .container {
+        padding: 16px;
+        background-color: white;
+    }
+    /* Full-width input fields */
+    
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+    
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    /* Overwrite default styles of hr */
+    
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+    /* Set a style for the submit button */
+    
+    .registerbtn {
+        background-color: black;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+    
+    .registerbtn:hover {
+        opacity: 1;
+    }
+    /* Add a blue text color to links */
+    
+    a {
+        color: dodgerblue;
+    }
+    /* Set a grey background color and center the text of the "sign in" section */
+    
+    .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+    }
+</style> 
+<script type="text/javascript" src="static/js/choose.js"></script>
+<div class="main">
+    <div>
+        <form action="{{ url_for('send_file')}}" id="upload-file" method="post" enctype="multipart/form-data">
+            <div class="container">
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter email" name="email" required>
+
+                <label for="fname"><b>First name</b></label>
+                <input type="text" placeholder="Enter First Name" name="fname" required>
+
+                <label for="lname"><b>Last name</b></label>
+                <input type="text" placeholder="Enter Last Name" name="lname" required>
+
+                <label for="psw-repeat"><b>Phone number</b></label>
+                <input type="password" placeholder="Phone number" name="phonenumber" required>
+
+                <label for="occupation"><b>Occupation</b></label>
+                <input type="text" placeholder="Occupation" name="occupation" required>
+
+                <label for="city"><b>City</b></label>
+                <input type="text" placeholder="city" name="city" required>
+
+                <label for="state"><b>State</b></label>
+                <input type="text" placeholder="state" name="state" required>
+
+                <label for="ration_card"><b>ration card</b></label>
+                <input type="text" placeholder="Enter ration card" name="ration_card" required>
+
+                <label for="income"><b>Income</b></label>
+                <input type="text" placeholder="income" name="income" required>
+
+
+                <label for="imageUpload" class="upload-label">
+                
+            <b>Upload your aadhar picture</b>
+           </label><br><br>
+                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+
+
+                <div class="image-section" style="display:none;">
+                    <div class="img-preview">
+                        <div id="imagePreview"></div>
+                    </div>
+                    <div>
+                    </div>
+
+                    <div class="loader" style="display:none;"></div>
+                </div>
+                <div class="loader" style="display:none;"></div>
+                <hr>
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                <button type="submit" class="registerbtn">Register</button>
+
+
+                <div class="container signin">
+                    <p>Already have an account? <a href="#">Sign in</a>.</p>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
