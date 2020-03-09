@@ -1,7 +1,5 @@
 from flask_login import login_user, current_user, logout_user, login_required
 from werkzeug.utils import secure_filename
-import cloudmersive_ocr_api_client
-from cloudmersive_ocr_api_client.rest import ApiException
 import re
 from twilio.rest import Client
 import os
@@ -43,9 +41,7 @@ def regex_match(string_to_search, term):
         return None
 
 def extract(image_file):
-    api_instance = cloudmersive_ocr_api_client.ImageOcrApi()
-    api_instance.api_client.configuration.api_key = {}
-    api_instance.api_client.configuration.api_key['Apikey'] = '18332bfc-56d2-45ac-9df0-8bb9fff0b228'
+    
 
     try:
         # Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
